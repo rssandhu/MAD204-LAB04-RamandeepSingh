@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Course: XXX-XXX Lab 4
+  Author: Your Name - StudentID
+  Date: 01-Dec-2025
+  Description: Dialog layout to edit note title and content.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etEditTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/etEditContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Content"
+        android:minLines="3"
+        android:gravity="top|start"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
