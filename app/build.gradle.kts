@@ -1,14 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
-    namespace = "com.example.myapplication_test"
+    namespace = "com.example.lab4notesreminderapp"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.myapplication_test"
+        applicationId = "com.example.lab4notesreminderapp"
         minSdk = 30
         targetSdk = 36
         versionCode = 1
@@ -45,4 +46,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Room version
+    val roomVersion = "2.6.1"
+
+// Room dependencies
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+
+// Lifecycle (optional)
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
 }

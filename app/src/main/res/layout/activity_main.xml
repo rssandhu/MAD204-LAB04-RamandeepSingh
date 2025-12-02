@@ -1,19 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  Course: XXX-XXX Lab 4
+  Author: Your Name - StudentID
+  Date: 01-Dec-2025
+  Description: Main screen layout for Notes + Reminder app including EditTexts, buttons, and RecyclerView.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/teal_50"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="My Smart Notes"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingBottom="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Note title">
+
+    <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/etTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+</com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Note details"
+    android:layout_marginTop="8dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/etContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minLines="3"
+    android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+<Button
+android:id="@+id/btnAddNote"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Add Note"
+android:layout_marginTop="8dp" />
+
+<Button
+android:id="@+id/btnStartReminder"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Start 5s Reminder"
+android:layout_marginTop="4dp" />
+
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/rvNotes"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_marginTop="12dp"
+android:layout_weight="1"
+android:clipToPadding="false"
+android:paddingBottom="8dp" />
+    </LinearLayout>
